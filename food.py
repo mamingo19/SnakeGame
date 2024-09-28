@@ -1,7 +1,7 @@
 from turtle import Turtle
 import random
 
-class Food(Turtle):
+class Food(Turtle): #food class
     def __init__(self):
         super().__init__()
         self.shape("circle")
@@ -11,6 +11,7 @@ class Food(Turtle):
         self.speed("fastest")
         self.refresh()
 
+#Method to make the food appear in a random position in the screen
     def refresh(self):
         x = random.randint(-280, 280)
         y = random.randint(-280, 280)
