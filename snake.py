@@ -1,6 +1,6 @@
 from turtle import Turtle
 STARTING_POSITIONS = [(0,0),(-5,0),(-10,0)]
-MOVE_DISTANCE = 5
+MOVE_DISTANCE = 10
 UP = 90
 DOWN = 270
 LEFT = 180
@@ -17,7 +17,7 @@ class Snake:
             snake = Turtle(shape="square")
             snake.color("white")
             snake.penup()
-            snake.shapesize(0.25, 0.25)
+            snake.shapesize(0.5, 0.5)
             snake.goto(position)
             self.snake_body.append(snake)
 
@@ -28,6 +28,7 @@ class Snake:
             self.snake_body[snake_num].goto(new_x, new_y)
         self.head.forward(MOVE_DISTANCE)
 
+#note: in this keybind method I also implement the constraint that the snake cannot move backward
     def up(self):
         if self.head.heading() != DOWN:
             self.head.setheading(UP)
